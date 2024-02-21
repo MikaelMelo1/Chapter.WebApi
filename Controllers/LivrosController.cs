@@ -43,5 +43,11 @@ namespace Chapter.WebApi.Controllers
             _livroRepository.Cadastrar(livro);
             return StatusCode(201);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id) {
+            _livroRepository.Deletar(id);
+            return StatusCode(204);
+        }
     }
 }

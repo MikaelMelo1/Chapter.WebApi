@@ -44,5 +44,11 @@ namespace Chapter.WebApi.Repositories
 
             _context.SaveChanges();
         }
+
+        public void Deletar (int id) {
+           Livro livroBuscado = _context.Livros.Find(id);
+           _context.Livros.Remove(livroBuscado);
+           _context.SaveChanges();
+        }
     }
 }
