@@ -30,22 +30,24 @@ namespace Chapter.WebApi.Controllers
             }
             return Ok(livro);
         }
-        [HttpPut("{id}")] 
+        [HttpPut("{id}")]
         public IActionResult Atualizar(int id, Livro livro)
         {
-           _livroRepository.Atualizar(id, livro);
-           return StatusCode(204);
-        
+            _livroRepository.Atualizar(id, livro);
+            return StatusCode(204);
+
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(Livro livro) {
+        public IActionResult Cadastrar(Livro livro)
+        {
             _livroRepository.Cadastrar(livro);
             return StatusCode(201);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Deletar(int id) {
+        public IActionResult Deletar(int id)
+        {
             _livroRepository.Deletar(id);
             return StatusCode(204);
         }

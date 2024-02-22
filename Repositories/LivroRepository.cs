@@ -24,31 +24,34 @@ namespace Chapter.WebApi.Repositories
             return _context.Livros.Find(id);
         }
 
-        public void Atualizar (int id, Livro livro) 
+        public void Atualizar(int id, Livro livro)
         {
             Livro livroBuscado = _context.Livros.Find(id);
 
-            if (livroBuscado != null) {
+            if (livroBuscado != null)
+            {
                 livroBuscado.Titulo = livro.Titulo;
                 livroBuscado.QuantidadePaginas = livro.QuantidadePaginas;
                 livroBuscado.Disponivel = livro.Disponivel;
-               
+
             }
 
             _context.Livros.Update(livroBuscado);
             _context.SaveChanges();
         }
-        
-        public void Cadastrar(Livro livro) {
+
+        public void Cadastrar(Livro livro)
+        {
             _context.Livros.Add(livro);
 
             _context.SaveChanges();
         }
 
-        public void Deletar (int id) {
-           Livro livroBuscado = _context.Livros.Find(id);
-           _context.Livros.Remove(livroBuscado);
-           _context.SaveChanges();
+        public void Deletar(int id)
+        {
+            Livro livroBuscado = _context.Livros.Find(id);
+            _context.Livros.Remove(livroBuscado);
+            _context.SaveChanges();
         }
     }
 }
